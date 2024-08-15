@@ -1,0 +1,12 @@
+AZURE_SEARCH_SERVICE_ENDPOINT=https://<name>.search.windows.net
+AZURE_SEARCH_INDEX=employees
+AZURE_SEARCH_ADMIN_KEY=
+BLOB_CONNECTION_STRING="DefaultEndpointsProtocol=https;AccountName=<acct>;AccountKey=<secret>;EndpointSuffix=core.windows.net"
+BLOB_CONTAINER_NAME=zoo
+AZURE_OPENAI_ENDPOINT=https://<name>.openai.azure.com/
+AZURE_OPENAI_KEY=<secret>
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-ada-002
+AZURE_OPENAI_API_VERSION=2024-05-01-preview
+AZURE_OPENAI_EMBEDDING_MODEL_NAME=text-embedding-ada-002
+AZURE_OPENAI_EMBEDDING_DIMENSIONS=1536
+AZURE_OPENAI_CHATGPT_DEPLOYMENT=gpt-4o
