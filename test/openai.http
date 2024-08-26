@@ -1,0 +1,14 @@
+POST {{baseUrl}}/openai/deployments/gpt-4o/chat/completions?api-version=2024-05-01-preview
+Content-Type: application/json
+api-key: {{api-key}}
+
+{"model":"gpt-35-turbo","messages":[{"role":"user","content":"Hello!"}]}
+###
+GET https://apim-rfpirctkhuww2.azure-api.net/echo/resource?param1=sample
+###
+POST https://mrai.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-05-01-preview
+Content-Type: application/json
+api-key: {{openai-api-key}}
+
+{"model":"gpt-35-turbo","messages":[{"role":"user","content":"Hello!"}]}
+###

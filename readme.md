@@ -1,6 +1,7 @@
 # AI-assisted search
 
 Code based on this [repo](https://github.com/Azure/azure-search-vector-samples/blob/main/demo-python/code/indexers/csv.ipynb).
+Another example [here](https://github.com/azure-way/rag/blob/main/app/backend/approaches/chatreadretrieveread.py).
 
 Demonstrates use of generative technology in **both steps** of a typical RAG pattern: data retrieval and prompt response.
 
