@@ -31,3 +31,26 @@ that are likely to be needed to find data appropriate for user prompts. Further 
 
 
 **Note** that .env is .gitignor'ed to protect your secrets.
+
+### Monitoring
+
+[Log monitor](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/openai/architecture/log-monitor-azure-openai)
+
+```
+ApiManagementGatewayLogs
+| where OperationId == 'ChatCompletions_Create'
+| extend modelkey = substring(parse_json(BackendResponseBody)['model'], 0, indexof(parse_json(BackendResponseBody)['model'], '-', 0, -1, 2))
+| extend model = tostring(parse_json(BackendResponseBody)['model'])
+| extend prompttokens = parse_json(parse_json(BackendResponseBody)['usage'])['prompt_tokens']
+| extend completiontokens = parse_json(parse_json(BackendResponseBody)['usage'])['completion_tokens']
+| extend totaltokens = parse_json(parse_json(BackendResponseBody)['usage'])['total_tokens']
+| extend ip = CallerIpAddress
+| summarize
+    sum(todecimal(prompttokens)),
+    sum(todecimal(completiontokens)),
+    sum(todecimal(totaltokens)),
+    avg(todecimal(totaltokens))
+    by ip, model
+```
+
+was: *| where OperationId == 'completions_create'*
